@@ -1,11 +1,11 @@
 require "test_helper"
-module SafeHash
+module Sihash
 	class HashTest < Minitest::Test
 		def setup
       @number = 12345
       @collection = [1, 2, 3]
 			@hash = { a: { b: { c: @collection, d: @number } } }
-			@safe_hash = Shash.new(@hash)
+			@safe_hash = Hash.new(@hash)
       @double_proc = Proc.new { |x| x * 2 }
     end
 
@@ -28,7 +28,7 @@ module SafeHash
     end
 
     def test_map_on_existinting_thats_not_an_array_should_raise_an_exception
-      assert_raises SafeHash::Errors::ExistingNotCollectionKey do
+      assert_raises Sihash::Errors::ExistingNotCollectionKey do
         @safe_hash.map([:a, :b, :d], &@double_proc)
       end
     end

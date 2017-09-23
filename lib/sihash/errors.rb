@@ -1,4 +1,4 @@
-module SafeHash
+module Sihash
   module Errors
     class ExistingNotCollectionKey < Exception
     end

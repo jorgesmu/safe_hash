@@ -1,7 +1,7 @@
 require "test_helper"
 
-class SafeHashTest < Minitest::Test
+class SihashTest < Minitest::Test
   def test_that_it_has_a_version_number
-    refute_nil ::SafeHash::VERSION
+    refute_nil ::Sihash::VERSION
   end
 end

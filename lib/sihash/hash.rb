@@ -1,5 +1,5 @@
-module SafeHash
-	class Shash
+module Sihash
+	class Hash
 
 		COLLECTION_METHODS = [:each, :map, :select, :find]
 

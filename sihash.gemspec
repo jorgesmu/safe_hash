@@ -1,17 +1,17 @@
 # coding: utf-8
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "safe_hash/version"
+require "sihash/version"
 
 Gem::Specification.new do |spec|
   spec.name          = "safe_hash"
-  spec.version       = SafeHash::VERSION
+  spec.version       = Sihash::VERSION
   spec.authors       = ["Jorge Smulevici"]
   spec.email         = ["jsmulevici@gmail.com"]
 
-  spec.summary       = %q{allow safe hashing operations}
-  spec.description   = %q{allows you to perform safety operations over a hash without need of keys existing checkings}
-  spec.homepage      = "https://github.com/jorgesmu/safe_hash"
+  spec.summary       = %q{Simple, safe hash operations}
+  spec.description   = %q{allows you to perform multikey accesing and safety operations over a hash without need of keys existing checkings}
+  spec.homepage      = "https://github.com/jorgesmu/sihash"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
