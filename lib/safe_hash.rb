@@ -1,5 +1,3 @@
 require "safe_hash/version"
-
-module SafeHash
-  # Your code goes here...
-end
+require "safe_hash/shash"
+require "safe_hash/errors"
