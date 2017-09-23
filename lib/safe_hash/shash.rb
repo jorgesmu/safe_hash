@@ -6,10 +6,11 @@ module SafeHash
 		def initialize(initial_state={})
 			@state = initial_state
 		end
-
-		# def each
-		# 	iterate(:each, keys_path, &Proc.new)
-		# end
+		
+		def [](key, *nested_keys)
+			key_path = nested_keys.unshift(key)
+			dig(key_path)
+		end
 
 	  def method_missing(method_sym, *arguments, &block)
 
