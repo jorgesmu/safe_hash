@@ -1,8 +1,6 @@
 # Sihash
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/safe_hash`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-This gem allows you to perform safety operations over a hash without need of keys existing checkings.
+Multikey accesing and safety operations on a hash
 
 ## Installation
 
@@ -22,7 +20,37 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Multikey accesor
+
+```ruby
+001 > require 'sihash'
+ => true 
+002 > hash = Sihash::Hash.new({ a: { b: { d: [1,2,3] } } })
+ => #<Sihash::Hash:0x007fb96a9b5048 @state={:a=>{:b=>{:d=>[1, 2, 3]}}}> 
+003 > hash[:a]
+ => {:b=>{:d=>[1, 2, 3]}} 
+004 > hash[:a, :b]
+ => {:d=>[1, 2, 3]} 
+005 > hash[:a, :b, :d]
+ => [1, 2, 3] 
+006 > hash[:a, :b, :r, :e, :f, :g]
+ => nil 
+```
+Safe collection actions(each, map, select, find) without need to check key existance
+
+```ruby
+001 >   require 'sihash'
+ => false 
+002 > hash = Sihash::Hash.new({ a: { b: { d: [1,2,3] } } })
+ => #<Sihash::Hash:0x007fb96a95d7a8 @state={:a=>{:b=>{:d=>[1, 2, 3]}}}> 
+003 > proc = Proc.new{|e| e*2 }
+ => #<Proc:0x007fb96a94f338@(irb):21> 
+004 > hash.map([:a, :b, :d], &proc)
+ => [2, 4, 6] 
+005 > hash.map([:a, :b, :e, :f], &proc)
+ => []
+```
+
 
 ## Development
 

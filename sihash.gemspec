@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require "sihash/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "safe_hash"
+  spec.name          = "sihash"
   spec.version       = Sihash::VERSION
   spec.authors       = ["Jorge Smulevici"]
   spec.email         = ["jsmulevici@gmail.com"]
 
   spec.summary       = %q{Simple, safe hash operations}
-  spec.description   = %q{allows you to perform multikey accesing and safety operations over a hash without need of keys existing checkings}
+  spec.description   = %q{allows you to perform multikey accesing and safety operations on a hash}
   spec.homepage      = "https://github.com/jorgesmu/sihash"
 
   spec.files         = `git ls-files -z`.split("\x0").reject do |f|
